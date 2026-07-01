@@ -195,10 +195,10 @@
   function getFonte() {
     return {
       familia: document.getElementById('fonteFamilia').value,
-      cliente: document.getElementById('tamanhoCliente').value + 'px',
+      Obs: document.getElementById('tamanhoCliente').value + 'px',
       itens:   document.getElementById('tamanhoItens').value + 'px',
       empresa: document.getElementById('tamanhoEmpresa').value + 'px',
-      Cliente:     document.getElementById('tamanhoObs').value + 'px',
+      Obs:     document.getElementById('tamanhoObs').value + 'px',
     };
   }
 
@@ -241,7 +241,7 @@
       if (!buffer.length) return;
       const nome = buffer[0].trim();
       const itens = buffer.slice(1).map(l => l.trim()).filter(Boolean);
-      if (nome) pedidos.push({ empresa: empresaGlobal, Cliente: obsGlobal, nome, itens });
+      if (nome) pedidos.push({ empresa: empresaGlobal, Obs: obsGlobal, nome, itens });
       buffer = [];
     }
 
@@ -266,7 +266,7 @@
       div.className = 'etiqueta';
       div.style.fontFamily = f.familia;
 
-      const obsHtml = p.obs ? `<div class="eta-obs" style="font-size:${f.obs}">Cliente: ${p.obs}</div>` : '';
+      const obsHtml = p.obs ? `<div class="eta-obs" style="font-size:${f.obs}">Obs: ${p.obs}</div>` : '';
 
       div.innerHTML = `
         <div class="eta-header">
@@ -315,9 +315,9 @@
   function salvarConfiguracoes() {
     const config = {
       empresa: document.getElementById('empresaGlobal').value,
-      Cliente: document.getElementById('obsGlobal').value,
+      Obs: document.getElementById('obsGlobal').value,
       fonte: document.getElementById('fonteFamilia').value,
-      cliente: document.getElementById('tamanhoCliente').value,
+      Obs: document.getElementById('tamanhoCliente').value,
       itens: document.getElementById('tamanhoItens').value,
       empresaTam: document.getElementById('tamanhoEmpresa').value,
       obsTam: document.getElementById('tamanhoObs').value
